@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Controle Parental - Simulação</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        max-width: 600px;
+        margin: 30px auto;
+        padding: 10px;
+        line-height: 1.6;
+      }
+      h1 {
+        text-align: center;
+      }
+      .card {
+        border: 1px solid #ccc;
+        border-radius: 12px;
+        padding: 15px;
+        margin: 15px 0;
+      }
+      label {
+        display: block;
+        margin-top: 10px;
+      }
+      input,
+      button {
+        padding: 8px;
+        width: 100%;
+        font-size: 16px;
+        margin-top: 5px;
+        border-radius: 8px;
+        border: 1px solid #999;
+      }
+      button {
+        background: #222;
+        color: #fff;
+        cursor: pointer;
+      }
+      button:disabled {
+        opacity: 0.6;
+        cursor: not-allowed;
+      }
+      .hidden {
+        display: none;
+      }
+      .ok {
+        color: green;
+      }
+      .err {
+        color: red;
+      }
+      .sim-sms {
+        background: #f4f4f4;
+        border: 1px dashed #555;
+        padding: 10px;
+        border-radius: 10px;
+        font-family: monospace;
+        margin-top: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Autorização dos Pais (Simulação)</h1>
+
+    <div class="card" id="requestCard">
+      <h2>Solicitar Acesso</h2>
+      <label for="childId">Usuário da criança:</label>
+      <input id="childId" placeholder="ex: joaozinho123" />
+
+      <label for="parentPhone">Telefone do responsável:</label>
+      <input id="parentPhone" placeholder="ex: +55 11 99999-9999" />
+
+      <button id="requestBtn">Enviar iToken (simulado)</button>
+      <p id="requestMsg"></p>
+      <div class="sim-sms hidden" id="simSms"></div>
+    </div>
+
+    <div class="card hidden" id="verifyCard">
+      <h2>Validar iToken</h2>
+      <label for="token">Digite o iToken recebido:</label>
+      <input id="token" maxlength="6" placeholder="••••••" />
+
+      <button id="verifyBtn">Validar e liberar jogo</button>
+      <p id="verifyMsg"></p>
+    </div>
+
+    <div class="card hidden" id="gameCard">
+      <h2>Jogo Liberado ✅</h2>
+      <button id="playBtn">Iniciar Jogo</button>
+      <div
+        id="gameArea"
+        class="hidden"
+        style="
+          border: 1px solid #444;
+          padding: 10px;
+          margin-top: 10px;
+          border-radius: 8px;
+        "
+      >
+        🎮 Aqui estaria o jogo real (placeholder).
+      </div>
+    </div>
+
+    <script>
+      let generatedToken = null;
+
+      const requestBtn = document.getElementById("requestBtn");
+      const verifyBtn = document.getElementById("verifyBtn");
+      const requestMsg = document.getElementById("requestMsg");
+      const verifyMsg = document.getElementById("verifyMsg");
+      const simSms = document.getElementById("simSms");
+
+      function show(el){ el.classList.remove("hidden"); }
+      function hide(el){ el.classList.add("hidden"); }
+
+      requestBtn.addEventListener("click", () => {
+        const childId = document.getElementById("childId").value.trim();
+        const parentPhone = document.getElementById("parentPhone").value.trim();
+        if (!childId || !parentPhone) {
+          requestMsg.textContent = "Preencha todos os campos.";
+          requestMsg.className = "err";
+          return;
+        }
+        // Gera token aleatório de 6 dígitos
+        generatedToken = String(Math.floor(100000 + Math.random()*900000));
+        requestMsg.textContent = "iToken gerado e enviado (simulação).";
+        requestMsg.className = "ok";
+        simSms.textContent = 📲 SMS simulado para ${parentPhone}: Seu iToken para liberar ${childId} é ${generatedToken};
+        show(simSms);
+        show(document.getElementById("verifyCard"));
+      });
+
+      verifyBtn.addEventListener("click", () => {
+        const typedToken = document.getElementById("token").value.trim();
+        if (typedToken === generatedToken) {
+          verifyMsg.textContent = "Acesso liberado!";
+          verifyMsg.className = "ok";
+          hide(document.getElementById("verifyCard"));
+          show(document.getElementById("gameCard"));
+        } else {
+          verifyMsg.textContent = "Token inválido. Tente novamente.";
+          verifyMsg.className = "err";
+        }
+      });
+
+      document.getElementById("playBtn").addEventListener("click", () => {
+        show(document.getElementById("gameArea"));
+      });
+    </script>
+  </body>
+</html>
