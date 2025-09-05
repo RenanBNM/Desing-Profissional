@@ -2,104 +2,121 @@
 <html lang="pt-BR">
   <head>
     <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Controle Parental - Simulação</title>
+    <!-- Carrega o Tailwind CSS para design moderno e responsivo -->
+    <script src="https://cdn.tailwindcss.com"></script>
     <style>
       body {
         font-family: Arial, sans-serif;
-        max-width: 600px;
-        margin: 30px auto;
-        padding: 10px;
         line-height: 1.6;
-      }
-      h1 {
-        text-align: center;
-      }
-      .card {
-        border: 1px solid #ccc;
-        border-radius: 12px;
-        padding: 15px;
-        margin: 15px 0;
-      }
-      label {
-        display: block;
-        margin-top: 10px;
-      }
-      input,
-      button {
-        padding: 8px;
-        width: 100%;
-        font-size: 16px;
-        margin-top: 5px;
-        border-radius: 8px;
-        border: 1px solid #999;
-      }
-      button {
-        background: #222;
-        color: #fff;
-        cursor: pointer;
-      }
-      button:disabled {
-        opacity: 0.6;
-        cursor: not-allowed;
       }
       .hidden {
         display: none;
       }
-      .ok {
-        color: green;
-      }
-      .err {
-        color: red;
-      }
-      .sim-sms {
-        background: #f4f4f4;
-        border: 1px dashed #555;
-        padding: 10px;
-        border-radius: 10px;
-        font-family: monospace;
-        margin-top: 10px;
-      }
     </style>
   </head>
-  <body>
-    <h1>Autorização dos Pais (Simulação)</h1>
+  <body class="bg-gray-900 text-gray-100 antialiased p-4">
+    <!-- Botão de Voltar ao Início -->
+    <a
+      href="./safegame_web_app.html"
+      class="inline-block mb-8 text-blue-400 hover:underline font-bold transition-colors"
+      >&larr; Voltar para o Início</a
+    >
 
-    <div class="card" id="requestCard">
-      <h2>Solicitar Acesso</h2>
-      <label for="childId">Usuário da criança:</label>
-      <input id="childId" placeholder="ex: joaozinho123" />
+    <h1
+      class="text-3xl md:text-4xl font-extrabold text-center text-blue-400 mb-6"
+    >
+      Autorização dos Pais (Simulação)
+    </h1>
 
-      <label for="parentPhone">Telefone do responsável:</label>
-      <input id="parentPhone" placeholder="ex: +55 11 99999-9999" />
+    <!-- Container centralizado para todo o conteúdo do formulário -->
+    <div class="flex flex-col items-center">
+      <div class="w-full max-w-xl">
+        <div
+          class="card bg-gray-800 p-6 rounded-xl shadow-lg my-4"
+          id="requestCard"
+        >
+          <h2 class="text-2xl font-semibold mb-4 text-center">
+            Solicitar Acesso
+          </h2>
+          <label for="childId" class="block font-semibold mb-1"
+            >Usuário da criança:</label
+          >
+          <input
+            id="childId"
+            placeholder="ex: joaozinho123"
+            class="w-full p-3 mb-4 bg-gray-700 rounded-lg border border-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-500"
+          />
 
-      <button id="requestBtn">Enviar iToken (simulado)</button>
-      <p id="requestMsg"></p>
-      <div class="sim-sms hidden" id="simSms"></div>
-    </div>
+          <label for="parentPhone" class="block font-semibold mb-1"
+            >Telefone do responsável:</label
+          >
+          <input
+            id="parentPhone"
+            placeholder="ex: +55 11 99999-9999"
+            class="w-full p-3 mb-4 bg-gray-700 rounded-lg border border-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-500"
+          />
 
-    <div class="card hidden" id="verifyCard">
-      <h2>Validar iToken</h2>
-      <label for="token">Digite o iToken recebido:</label>
-      <input id="token" maxlength="6" placeholder="••••••" />
+          <button
+            id="requestBtn"
+            class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-full transition-transform transform hover:scale-105"
+          >
+            Enviar iToken (simulado)
+          </button>
+          <p id="requestMsg" class="mt-4 text-center"></p>
+          <div
+            class="sim-sms hidden bg-gray-700 p-4 rounded-lg border border-dashed border-gray-500 mt-4"
+            id="simSms"
+          ></div>
+        </div>
 
-      <button id="verifyBtn">Validar e liberar jogo</button>
-      <p id="verifyMsg"></p>
-    </div>
+        <div
+          class="card hidden bg-gray-800 p-6 rounded-xl shadow-lg my-4"
+          id="verifyCard"
+        >
+          <h2 class="text-2xl font-semibold mb-4 text-center">
+            Validar iToken
+          </h2>
+          <label for="token" class="block font-semibold mb-1"
+            >Digite o iToken recebido:</label
+          >
+          <input
+            id="token"
+            maxlength="6"
+            placeholder="••••••"
+            class="w-full p-3 mb-4 bg-gray-700 rounded-lg border border-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-500"
+          />
 
-    <div class="card hidden" id="gameCard">
-      <h2>Jogo Liberado ✅</h2>
-      <button id="playBtn">Iniciar Jogo</button>
-      <div
-        id="gameArea"
-        class="hidden"
-        style="
-          border: 1px solid #444;
-          padding: 10px;
-          margin-top: 10px;
-          border-radius: 8px;
-        "
-      >
-        🎮 Aqui estaria o jogo real (placeholder).
+          <button
+            id="verifyBtn"
+            class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-full transition-transform transform hover:scale-105"
+          >
+            Validar e liberar jogo
+          </button>
+          <p id="verifyMsg" class="mt-4 text-center"></p>
+        </div>
+
+        <div
+          class="card hidden bg-gray-800 p-6 rounded-xl shadow-lg my-4"
+          id="gameCard"
+        >
+          <h2 class="text-2xl font-semibold mb-4 text-center">
+            Jogo Liberado ✅
+          </h2>
+          <button
+            id="playBtn"
+            class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-full transition-transform transform hover:scale-105"
+          >
+            Iniciar Jogo
+          </button>
+          <div
+            id="gameArea"
+            class="hidden text-center text-gray-400 p-4 mt-4 border border-gray-600 rounded-lg"
+          >
+            🎮 Aqui estaria o jogo real (placeholder).
+          </div>
+        </div>
       </div>
     </div>
 
@@ -112,22 +129,27 @@
       const verifyMsg = document.getElementById("verifyMsg");
       const simSms = document.getElementById("simSms");
 
-      function show(el){ el.classList.remove("hidden"); }
-      function hide(el){ el.classList.add("hidden"); }
+      function show(el) {
+        el.classList.remove("hidden");
+      }
+      function hide(el) {
+        el.classList.add("hidden");
+      }
 
       requestBtn.addEventListener("click", () => {
         const childId = document.getElementById("childId").value.trim();
         const parentPhone = document.getElementById("parentPhone").value.trim();
         if (!childId || !parentPhone) {
           requestMsg.textContent = "Preencha todos os campos.";
-          requestMsg.className = "err";
+          requestMsg.className = "text-red-400";
           return;
         }
         // Gera token aleatório de 6 dígitos
-        generatedToken = String(Math.floor(100000 + Math.random()*900000));
+        generatedToken = String(Math.floor(100000 + Math.random() * 900000));
         requestMsg.textContent = "iToken gerado e enviado (simulação).";
-        requestMsg.className = "ok";
-        simSms.textContent = 📲 SMS simulado para ${parentPhone}: Seu iToken para liberar ${childId} é ${generatedToken};
+        requestMsg.className = "text-green-400";
+        // Usando crases para o template literal
+        simSms.textContent = `📲 SMS simulado para ${parentPhone}: Seu iToken para liberar ${childId} é ${generatedToken}`;
         show(simSms);
         show(document.getElementById("verifyCard"));
       });
@@ -136,12 +158,12 @@
         const typedToken = document.getElementById("token").value.trim();
         if (typedToken === generatedToken) {
           verifyMsg.textContent = "Acesso liberado!";
-          verifyMsg.className = "ok";
+          verifyMsg.className = "text-green-400";
           hide(document.getElementById("verifyCard"));
           show(document.getElementById("gameCard"));
         } else {
           verifyMsg.textContent = "Token inválido. Tente novamente.";
-          verifyMsg.className = "err";
+          verifyMsg.className = "text-red-400";
         }
       });
 

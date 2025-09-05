@@ -1,0 +1,14 @@
+/* Importa a fonte personalizada para o corpo do site */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+/* Estilos globais para o corpo e elementos principais */
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #0d1117;
+    color: #e6edf3;
+}
+
+/* Estiliza os botões de navegação do Swiper */
+.swiper-button-next, .swiper-button-prev {
+    color: #1a73e8; /* Cor azul */
+}

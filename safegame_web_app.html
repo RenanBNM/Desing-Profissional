@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SafeGame - Proteção Digital</title>
+    <!-- Carrega o Tailwind CSS para design moderno e responsivo -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Carrega Boxicons para os ícones -->
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <!-- Carrega Swiper JS para o carrossel -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
+      body {
+        font-family: "Inter", sans-serif;
+        background-color: #0d1117;
+        color: #e6edf3;
+      }
+      .swiper-button-next,
+      .swiper-button-prev {
+        color: #1a73e8;
+      }
+    </style>
+  </head>
+
+  <body class="bg-gray-900 text-gray-100 antialiased">
+    <!-- Navegação -->
+    <nav class="bg-gray-800 p-4 sticky top-0 z-50 shadow-lg">
+      <div class="container mx-auto flex justify-between items-center">
+        <a href="#home" class="flex items-center space-x-2">
+          <img
+            src="https://placehold.co/40x40/2563EB/fff?text=Lobo"
+            alt="Logo SafeGame"
+            class="rounded-full"
+          />
+          <span class="text-xl font-bold text-blue-500">SafeGame</span>
+        </a>
+        <ul class="hidden md:flex space-x-6">
+          <li>
+            <a href="#home" class="hover:text-blue-400 transition-colors"
+              >Início</a
+            >
+          </li>
+          <li>
+            <a href="#services" class="hover:text-blue-400 transition-colors"
+              >Serviços</a
+            >
+          </li>
+          <li>
+            <a href="#ai-demo" class="hover:text-blue-400 transition-colors"
+              >Demo IA</a
+            >
+          </li>
+          <li>
+            <a href="#contact" class="hover:text-blue-400 transition-colors"
+              >Contato</a
+            >
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <main class="container mx-auto p-4">
+      <!-- Seção de Início (Hero) -->
+      <section
+        id="home"
+        class="text-center py-20 bg-gray-800 rounded-2xl shadow-xl mt-8"
+      >
+        <h1
+          class="text-4xl md:text-6xl font-extrabold leading-tight text-blue-400"
+        >
+          Proteção e monitoramento <br class="hidden md:block" />
+          para um ambiente virtual mais seguro
+        </h1>
+        <a href="./itonken.html">
+          <img
+            src="https://placehold.co/800x400/171f2a/e6edf3?text=Crianças+Jogando"
+            alt="Crianças jogando em um ambiente seguro"
+            class="mt-8 mx-auto rounded-xl"
+          />
+        </a>
+        <a
+          href="#services"
+          class="mt-8 inline-block bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-full shadow-lg transition-transform transform hover:scale-105"
+          >Saiba Mais</a
+        >
+      </section>
+
+      <!-- Seção de Parceiros
+      <section class="mt-16 text-center">
+        <h2 class="text-3xl font-bold mb-6 text-gray-200">Nossos Parceiros</h2>
+        <img
+          src="https://placehold.co/800x100/171f2a/e6edf3?text=Logos+de+Parceiros"
+          alt="Logos de parceiros"
+          class="w-full rounded-lg"
+        />
+      </section> -->
+
+      <!-- Seção de Serviços -->
+      <section
+        id="services"
+        class="mt-16 text-center bg-gray-800 rounded-2xl p-8 shadow-xl"
+      >
+        <h2 class="text-3xl font-bold mb-8 text-gray-200">Nossos Serviços</h2>
+        <div class="swiper mySwiper">
+          <div class="swiper-wrapper">
+            <div
+              class="swiper-slide bg-gray-700 rounded-xl p-6 flex flex-col items-center text-center shadow-lg"
+            >
+              <i class="bx bxs-face-mask text-5xl text-blue-400"></i>
+              <h4 class="text-xl font-bold mt-4">Monitoramento de Chats</h4>
+              <p class="mt-2 text-gray-300">
+                Nossa plataforma utiliza Inteligência Artificial (IA) para
+                analisar a interação em chats de jogos. Através de um sistema
+                avançado, identificamos padrões de linguagem e comportamentos
+                suspeitos de potenciais predadores online, alertando os pais em
+                tempo real. A segurança de seus filhos é nossa prioridade.
+              </p>
+            </div>
+            <div
+              class="swiper-slide bg-gray-700 rounded-xl p-6 flex flex-col items-center text-center shadow-lg"
+            >
+              <i class="bx bx-sitemap text-5xl text-blue-400"></i>
+              <h4 class="text-xl font-bold mt-4">Conscientização para Pais</h4>
+              <p class="mt-2 text-gray-300">
+                Oferecemos um guia completo sobre o que é a pedofilia em
+                ambientes virtuais e como os pedófilos agem nos jogos. Nosso
+                objetivo é capacitar os pais com o conhecimento necessário para
+                proteger seus filhos. Aprenda a reconhecer os sinais de alerta e
+                a tomar medidas proativas para garantir um ambiente digital
+                seguro.
+              </p>
+              <a
+                href="./guia_de_consci.html"
+                class="mt-4 inline-block bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full shadow-lg transition-transform transform hover:scale-105"
+                >Ler Guia</a
+              >
+            </div>
+          </div>
+          <div class="swiper-pagination mt-4"></div>
+        </div>
+      </section>
+
+      <!-- Demonstração de IA -->
+      <section id="ai-demo" class="mt-16 bg-gray-800 rounded-2xl p-8 shadow-xl">
+        <h2 class="text-3xl font-bold text-center text-gray-200 mb-6">
+          Análise de Texto por IA
+        </h2>
+        <div class="max-w-xl mx-auto">
+          <p class="text-gray-300 text-center mb-6">
+            Experimente nossa ferramenta de análise de texto. Digite uma
+            mensagem de chat e veja como nossa IA a avalia para detectar riscos.
+          </p>
+          <form id="ai-form" class="space-y-4">
+            <textarea
+              id="ai-input"
+              class="w-full h-32 p-4 bg-gray-700 rounded-lg border border-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-colors"
+              placeholder="Digite uma mensagem de chat para análise..."
+              required
+            ></textarea>
+            <button
+              type="submit"
+              id="ai-submit-btn"
+              class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-full shadow-lg transition-transform transform hover:scale-105"
+            >
+              Analisar
+            </button>
+          </form>
+          <div
+            id="ai-response"
+            class="mt-6 p-4 bg-gray-700 rounded-lg border border-gray-600 hidden"
+          >
+            <div id="ai-response-text" class="text-lg"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Seção de Contato -->
+      <section
+        id="contact"
+        class="mt-16 text-center bg-gray-800 rounded-2xl p-8 shadow-xl"
+      >
+        <h2 class="text-3xl font-bold mb-6 text-gray-200">Denuncie Aqui</h2>
+        <div class="max-w-xl mx-auto">
+          <form
+            action="https://formspree.io/f/YOUR_FORM_ID"
+            method="POST"
+            class="space-y-4"
+          >
+            <input
+              type="text"
+              name="name"
+              placeholder="Seu Nome"
+              autocomplete="off"
+              required
+              class="w-full p-3 bg-gray-700 rounded-lg border border-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            />
+            <input
+              type="email"
+              name="email"
+              placeholder="Seu E-mail"
+              autocomplete="off"
+              required
+              class="w-full p-3 bg-gray-700 rounded-lg border border-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            />
+            <textarea
+              name="message"
+              rows="5"
+              placeholder="Digite sua mensagem ou denúncia..."
+              required
+              class="w-full p-3 bg-gray-700 rounded-lg border border-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            ></textarea>
+            <button
+              type="submit"
+              class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-full shadow-lg transition-transform transform hover:scale-105"
+            >
+              Enviar Denúncia
+            </button>
+          </form>
+        </div>
+      </section>
+
+      <!-- Seção de Localização -->
+      <section
+        id="localization"
+        class="mt-16 text-center bg-gray-800 rounded-2xl p-8 shadow-xl"
+      >
+        <h2 class="text-3xl font-bold mb-6 text-gray-200">Nossa Localização</h2>
+        <div
+          class="localizationContainer w-full rounded-xl overflow-hidden shadow-lg"
+        >
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3657.172960661266!2d-46.65751248443586!3d-23.56214536750389!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce59a722301149%3A0x67341e338165c71d!2sR.%20da%20Consola%C3%A7%C3%A3o%2C%20227%20-%20Consola%C3%A7%C3%A3o%2C%20S%C3%A3o%20Paulo%20-%20SP%2C%2001301-000%2C%20Brazil!5e0!3m2!1sen!2sus!4v1660600000000!5m2!1sen!2sus"
+            width="100%"
+            height="450"
+            style="border: 0"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          ></iframe>
+        </div>
+      </section>
+    </main>
+
+    <!-- Rodapé -->
+    <footer class="bg-gray-800 p-8 mt-16 rounded-t-2xl shadow-inner">
+      <div
+        class="container mx-auto flex flex-col md:flex-row justify-between items-center text-center md:text-left"
+      >
+        <a href="#home" class="flex items-center space-x-2">
+          <img
+            src="https://placehold.co/40x40/2563EB/fff?text=Lobo"
+            alt="Logo SafeGame"
+            class="rounded-full"
+          />
+          <span class="text-xl font-bold text-blue-500">SafeGame</span>
+        </a>
+        <ul class="flex flex-wrap justify-center space-x-4 mt-4 md:mt-0">
+          <li>
+            <a href="#home" class="hover:text-blue-400 transition-colors"
+              >Início</a
+            >
+          </li>
+          <li>
+            <a href="#services" class="hover:text-blue-400 transition-colors"
+              >Serviços</a
+            >
+          </li>
+          <li>
+            <a href="#ai-demo" class="hover:text-blue-400 transition-colors"
+              >Demo IA</a
+            >
+          </li>
+          <li>
+            <a href="#contact" class="hover:text-blue-400 transition-colors"
+              >Contato</a
+            >
+          </li>
+        </ul>
+      </div>
+      <div class="text-center text-gray-500 mt-6">
+        <h5>&copy; Copyright todos os direitos reservados 2024</h5>
+      </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const swiper = new Swiper(".mySwiper", {
+          slidesPerView: 1,
+          spaceBetween: 30,
+          loop: true,
+          pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+          },
+          breakpoints: {
+            768: {
+              slidesPerView: 2,
+            },
+          },
+        });
+
+        // Lógica para a demonstração da IA
+        const aiForm = document.getElementById("ai-form");
+        const aiInput = document.getElementById("ai-input");
+        const aiResponseContainer = document.getElementById("ai-response");
+        const aiResponseText = document.getElementById("ai-response-text");
+
+        aiForm.addEventListener("submit", function (event) {
+          event.preventDefault();
+
+          const userInput = aiInput.value.toLowerCase();
+          aiResponseContainer.classList.remove("hidden");
+          aiResponseText.innerHTML =
+            '<span class="text-gray-400">Analisando...</span>';
+
+          setTimeout(() => {
+            let analysisResult = "";
+            let analysisTitle = "";
+
+            // Palavras-chave para análise de risco
+            const highRiskKeywords = {
+              "Solicitação de informações pessoais": [
+                "mora onde",
+                "te busco",
+                "telefone",
+                "endereço",
+                "rua",
+                "bairro",
+                "escola",
+                "nome completo",
+                "idade",
+                "aniversário",
+                "cidade",
+              ],
+              "Solicitação de encontro físico": [
+                "encontrar",
+                "encontro",
+                "me ver",
+                "te ver",
+                "sair",
+                "rolê",
+                "te busco",
+                "me busca",
+                "vamos sair",
+              ],
+              "Solicitação de material inapropriado": [
+                "foto",
+                "foto sua",
+                "nude",
+                "nudes",
+                "sexo",
+                "vídeo",
+                "íntimo",
+                "sem roupa",
+                "tirar a roupa",
+                "webcam",
+              ],
+              "Táticas de grooming": [
+                "segredo",
+                "escondido",
+                "só entre nós",
+                "não conta pros pais",
+                "promete",
+                "eu gosto de você",
+                "confia em mim",
+                "meu quarto",
+                "casa",
+                "meu endereço",
+              ],
+              "Ameaças e Bullying": [
+                "te pego",
+                "se fodeu",
+                "lixo",
+                "merda",
+                "burro",
+                "idiota",
+                "nojento",
+                "vai se ferrar",
+                "odeio",
+              ],
+            };
+
+            const moderateRiskKeywords = {
+              "Redirecionamento para chats privados": [
+                "whatsapp",
+                "wpp",
+                "discord",
+                "telegram",
+                "insta",
+                "instagram",
+                "no pv",
+                "vamos conversar privado",
+              ],
+              "Linguagem inapropriada": [
+                "droga",
+                "chato",
+                "feio",
+                "maldito",
+                "me liga",
+                "ligação",
+                "estranho",
+                "maluco",
+                "problemático",
+              ],
+            };
+
+            const safeKeywords = [
+              "partida",
+              "vamos jogar",
+              "online",
+              "fase",
+              "conseguiu",
+              "missão",
+              "jogo",
+              "amigo",
+              "equipe",
+              "pessoal",
+              "legal",
+              "bacana",
+              "obrigado",
+              "conquista",
+              "skin",
+              "fase",
+              "personagem",
+              "level up",
+              "missão",
+              "mapa",
+              "item",
+              "ganhei",
+              "perdi",
+              "ajuda",
+            ];
+
+            let highRiskFound = [];
+            let moderateRiskFound = [];
+            let safeFound = [];
+
+            // Verifica palavras de alto risco
+            for (const type in highRiskKeywords) {
+              highRiskKeywords[type].forEach((keyword) => {
+                if (userInput.includes(keyword)) {
+                  highRiskFound.push(type);
+                }
+              });
+            }
+
+            // Verifica palavras de risco moderado
+            for (const type in moderateRiskKeywords) {
+              moderateRiskKeywords[type].forEach((keyword) => {
+                if (userInput.includes(keyword)) {
+                  moderateRiskFound.push(type);
+                }
+              });
+            }
+
+            // Verifica palavras seguras
+            safeKeywords.forEach((keyword) => {
+              if (userInput.includes(keyword)) {
+                safeFound.push(keyword);
+              }
+            });
+
+            // Lógica de resposta baseada nas palavras-chave encontradas
+            if (highRiskFound.length > 0) {
+              analysisTitle = "Alto Risco 🚨";
+              const uniqueRisks = [...new Set(highRiskFound)];
+              analysisResult = `
+                            <p class="font-bold mb-2 text-red-400">Análise de Risco: ${analysisTitle}</p>
+                            <p class="text-gray-300">O texto contém palavras-chave que indicam <span class="text-red-400 font-bold">${uniqueRisks.join(
+                              ", "
+                            )}</span>. Esse tipo de interação pode ser uma forma de <span class="text-red-400 font-bold">grooming</span>, assédio ou perigo direto.</p>
+                            <p class="text-sm mt-4 text-gray-400"><strong>Recomendação:</strong> Converse imediatamente com a criança e revise as amizades virtuais dela. Denuncie o comportamento à plataforma do jogo e bloqueie o usuário suspeito.</p>
+                        `;
+            } else if (moderateRiskFound.length > 0) {
+              analysisTitle = "Risco Moderado ⚠️";
+              const uniqueRisks = [...new Set(moderateRiskFound)];
+              analysisResult = `
+                            <p class="font-bold mb-2 text-yellow-400">Análise de Risco: ${analysisTitle}</p>
+                            <p class="text-gray-300">O texto contém linguagem inapropriada que pode indicar <span class="text-yellow-400 font-bold">${uniqueRisks.join(
+                              ", "
+                            )}</span>. Embora não seja uma ameaça direta, pode ser um sinal de comportamento negativo ou bullying.</p>
+                            <p class="text-sm mt-4 text-gray-400"><strong>Recomendação:</strong> Monitore as próximas conversas. Este é um bom momento para reforçar a importância de um bom comportamento online.</p>
+                        `;
+            } else if (safeFound.length > 0) {
+              analysisTitle = "Baixo Risco ✅";
+              analysisResult = `
+                            <p class="font-bold mb-2 text-green-400">Análise de Risco: ${analysisTitle}</p>
+                            <p class="text-gray-300">O texto parece ser uma interação normal e segura, focada no jogo. Nenhuma palavra-chave de risco foi encontrada.</p>
+                            <p class="text-sm mt-4 text-gray-400"><strong>Recomendação:</strong> Continue monitorando, mas não há motivo para preocupação imediata. É um bom sinal de que a criança está se divertindo em um ambiente seguro.</p>
+                        `;
+            } else {
+              analysisTitle = "Risco Desconhecido";
+              analysisResult = `
+                            <p class="font-bold mb-2 text-gray-400">Análise de Risco: ${analysisTitle}</p>
+                            <p class="text-gray-300">A análise não encontrou palavras-chave que pudessem indicar um risco imediato ou segurança completa. O contexto é muito amplo.</p>
+                            <p class="text-sm mt-4 text-gray-400"><strong>Recomendação:</strong> Caso o contexto pareça suspeito, leia o Guia de Conscientização ou monitore as próximas interações.</p>
+                        `;
+            }
+            aiResponseText.innerHTML = analysisResult;
+          }, 1500); // Atraso para simular o tempo de processamento da IA
+        });
+      });
+    </script>
+  </body>
+</html>
